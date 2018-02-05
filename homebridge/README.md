@@ -30,5 +30,7 @@ It containerizes [Homebridge](https://github.com/nfarina/homebridge), and expose
 If this container has been of benefit, feel free to donate:
 
 BTC:  1AXcswrF3CJiMxikAy3XHg2VK4Cbn6AfYh
+
 ZEC:  t1VmoKpKLQ95GaUWs5bpr5p3zmDJvmBzmTH
+
 ZEN:  znpCJSpT19UEBAXJsJ4UzZ1ewLq3Z8GLJ5m

@@ -13,12 +13,16 @@ A web interface makes setting up your own backup server really easy. For a quick
 Currently there are over 10,000 running UrBackup server instances (with auto-update enabled) with some instances having hundreds of active clients.
 
 ## NOTE:
-As it stands, the Docker implementation in FreeNAS Corral automatically uses Google's public DNS servers for name resolution within Docker hosts created by the system.  As such, any machines added to UrBackup will need to be added by IP address rather than hostname.  A work-around for this is to issue the following commands in the console of your Docker host VM:
+As it stands, the Docker implementation in FreeNAS Corral automatically uses Google's public DNS servers for name resolution within Docker hosts created by the system.  As such, any machines added to UrBackup will need to be added by IP address rather than hostname.  A work-around for this is to link /etc/resolv.conf on the Docker host VM to /etc/resolv.conf in the container using a volume:
 
 ~~~~ 
-echo nameserver ip.ad.dr.ess > /etc/resolv.conf
-echo nameserver 2nd.ad.dr.ess >> /etc/resolv.conf
-echo search domain.tld >> /etc/resolv.conf
+-v /etc/resolve.conf:/etc/resolve.conf:ro
 ~~~~
 
-Unfortunately, this work-around does not survive reboots, so if anyone has a more permanent solution, feel free to comment on this.
+This work-around should survive container and host reboots, and network changes on the host.
+
+If this container has been of benefit, feel free to donate:
+
+BTC:  1AXcswrF3CJiMxikAy3XHg2VK4Cbn6AfYh
+ZEC:  t1VmoKpKLQ95GaUWs5bpr5p3zmDJvmBzmTH
+ZEN:  znpCJSpT19UEBAXJsJ4UzZ1ewLq3Z8GLJ5m
